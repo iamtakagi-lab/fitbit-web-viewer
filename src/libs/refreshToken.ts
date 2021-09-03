@@ -3,6 +3,14 @@ import Credential from "./credential"
 import Fitbit from "./fitbit"
 
 const doRefreshToken = (fitbit: Fitbit, credential: Credential) => {
+
+    if (
+        credential.accessToken == null ||
+        credential.refreshToken == null ||
+        credential.accessToken.length <= 0 ||
+        credential.refreshToken.length <= 0
+    )
+
     fitbit.refreshAccessToken(credential.accessToken, credential.refreshToken, TOKEN_EXPIRE_TIME)
         .then((token: any) => {
             credential.setAccessToken(token.access_token)
