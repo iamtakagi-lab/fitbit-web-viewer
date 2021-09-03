@@ -4,6 +4,7 @@
   "author": "iamtakagi",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
     "date-fns": "^2.22.1",
     "firebase-admin": "^9.11.1",
     "fitbit-node": "^2.2.0",
