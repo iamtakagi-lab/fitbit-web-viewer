@@ -1,5 +1,7 @@
 import fs from 'fs'
 import path from 'path'
+import env from './env'
+import db from './db'
 
 export default class Credential {
 
@@ -7,11 +9,17 @@ export default class Credential {
     refreshToken: string = ""
 
     constructor() {
-        const storedCredential = JSON.parse(
-            fs.readFileSync(path.join(__dirname, '..', '..', 'data', 'credential.json'), 'utf8')
-        )
 
-        const { accessToken, refreshToken } = storedCredential
+        let ref
+
+        async() => {
+            ref = await db.collection(env.FIREBASE_COLLECTION).get()
+        }
+        
+        const data = ref.docs.find(doc => doc.id === env.FIREBASE_DOCUMENT_ID).data()
+
+        const accessToken = data.accessToken
+        const refreshToken= data.refreshToken
 
         if (
             accessToken == null ||
@@ -40,7 +48,12 @@ export default class Credential {
         this.refreshToken = ""
     }
 
-    save() {
-        fs.writeFileSync(path.join(__dirname, '..', '..', 'data', 'credential.json'), JSON.stringify({ accessToken: this.accessToken, refreshToken: this.refreshToken }))
+    async save() {
+        const ref = await db.collection(env.FIREBASE_COLLECTION).get()
+        const doc = ref.docs.find(doc => doc.id === env.FIREBASE_DOCUMENT_ID)
+        doc.ref.set({
+            "accessToken": this.accessToken,
+            "refreshToken": this.refreshToken
+        })
     }
 }
