@@ -63,7 +63,7 @@ export default class Credential {
     async save() {
         const ref = await db.collection(env.FIREBASE_COLLECTION_NAME).get()
         const doc = ref.docs.find(doc => doc.id === env.FIREBASE_DOCUMENT_ID)
-        doc.ref.set({
+        await doc.ref.set({
             "accessToken": this.accessToken,
             "refreshToken": this.refreshToken,
             "lastRefreshAt": Date.now()
