@@ -9,7 +9,7 @@ const doRefreshToken = (fitbit: Fitbit, credential: Credential) => {
         credential.refreshToken == null ||
         credential.accessToken.length <= 0 ||
         credential.refreshToken.length <= 0
-    )
+    ) return
 
     fitbit.refreshAccessToken(credential.accessToken, credential.refreshToken, TOKEN_EXPIRE_TIME)
         .then((token: any) => {
