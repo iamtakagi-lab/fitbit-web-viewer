@@ -3,8 +3,8 @@ import fetch from "../../libs/fetcher";
 import useCredential from "../../libs/useCredential";
 import useFitbit from "../../libs/useFitbit";
 
-export default () => (req: NextApiRequest, res: NextApiResponse) => {
-    const credential = useCredential()
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+    const credential = await useCredential()
     if (
         credential.accessToken == null ||
         credential.refreshToken == null ||
@@ -15,7 +15,6 @@ export default () => (req: NextApiRequest, res: NextApiResponse) => {
     const fitbit = useFitbit()
 
     fetch(credential, fitbit).then((activity) => {
-        res.json(activity)
+        res.json(JSON.stringify(activity))
     })
-    return
 }
