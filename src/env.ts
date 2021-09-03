@@ -2,9 +2,6 @@ export default {
     NODE_ENV: process.env.NODE_ENV
         ? process.env.NODE_ENV
         : 'development',
-    NAME: process.env.NAME
-        ? process.env.NAME
-        : '',
     BASE_URL: process.env.BASE_URL
         ? process.env.BASE_URL
         : '',

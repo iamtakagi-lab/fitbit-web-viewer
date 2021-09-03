@@ -1,11 +1,10 @@
-import env from '../env'
 import * as React from 'react'
 import { Activity } from '../types'
 
 const Fitbit: React.FC<{activity: Activity}> = ({activity}) => {
   return (
    <>
-    <p>{env.NAME} - 人体</p>
+    <p>takagi - 人体</p>
     <p>❤ 心拍数: {activity.heartrate}</p>
     <p>🔥 消費済みカロリー: {activity.calories}</p>
     <p>👟 歩いた距離: {activity.miles}</p>
