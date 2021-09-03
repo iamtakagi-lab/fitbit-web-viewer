@@ -41,6 +41,6 @@ export default class Credential {
     }
 
     save() {
-        fs.writeFileSync(path.join(__dirname, '..', 'data', 'credential.json'), JSON.stringify({ accessToken: this.accessToken, refreshToken: this.refreshToken }))
+        fs.writeFileSync(path.join(__dirname, '..', '..', 'data', 'credential.json'), JSON.stringify({ accessToken: this.accessToken, refreshToken: this.refreshToken }))
     }
 }
