@@ -1,4 +1,5 @@
 import fs from 'fs'
+import path from 'path'
 
 export default class Credential {
 
@@ -7,7 +8,7 @@ export default class Credential {
 
     constructor() {
         const storedCredential = JSON.parse(
-            fs.readFileSync('./data/credential.json', 'utf8')
+            fs.readFileSync(path.join(__dirname, '..', 'data', 'credential.json'), 'utf8')
         )
 
         const { accessToken, refreshToken } = storedCredential
@@ -40,6 +41,6 @@ export default class Credential {
     }
 
     save() {
-        fs.writeFileSync('./data/credential.json', JSON.stringify({ accessToken: this.accessToken, refreshToken: this.refreshToken }))
+        fs.writeFileSync(path.join(__dirname, '..', 'data', 'credential.json'), JSON.stringify({ accessToken: this.accessToken, refreshToken: this.refreshToken }))
     }
 }
