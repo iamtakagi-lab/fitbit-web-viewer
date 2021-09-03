@@ -8,7 +8,7 @@ export default class Credential {
 
     constructor() {
         const storedCredential = JSON.parse(
-            fs.readFileSync(path.join(__dirname, '..', 'data', 'credential.json'), 'utf8')
+            fs.readFileSync(path.join(__dirname, '..', '..', 'data', 'credential.json'), 'utf8')
         )
 
         const { accessToken, refreshToken } = storedCredential
