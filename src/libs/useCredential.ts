@@ -1,7 +1,7 @@
 import Credential from "./credential"
 
-const useCredential = () => {
-    return new Credential()
+const useCredential = async () => {
+    return await new Credential().load()
 }
 
 export default useCredential
