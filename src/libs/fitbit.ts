@@ -6,7 +6,7 @@ import { getTimeRange, jsonMemSize } from './utils'
 
 export default class Fitbit {
 
-    private client: any
+    private client: FitbitApiClient
 
     constructor() {
         this.client = new FitbitApiClient({

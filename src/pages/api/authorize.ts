@@ -13,6 +13,5 @@ export default auth ( async (req: NextApiRequest, res: NextApiResponse) => {
         }
         const fitbit = useFitbit()
         res.redirect(fitbit.getAuthorizeUrl());
-        res.end()
     }
 )
