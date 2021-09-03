@@ -5,8 +5,7 @@ import useFitbit from "../../libs/useFitbit";
 import basicAuthMiddleware from "nextjs-basic-auth-middleware";
 import env from "../../libs/env";
 
-export default () => auth(async (req: NextApiRequest, res: NextApiResponse) => {
-        await basicAuthMiddleware(req, res, {})
+export default () => (req: NextApiRequest, res: NextApiResponse) => {
         const { code } = req.query
 
         if(!code || typeof code !== 'string') return
@@ -26,5 +25,4 @@ export default () => auth(async (req: NextApiRequest, res: NextApiResponse) => {
         }).catch((err: any) => {
             res.send("error")
         });
-    }
-)
+}
