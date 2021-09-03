@@ -26,8 +26,8 @@ export default {
     FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PROJECT_ID
         ? process.env.FIREBASE_PROJECT_ID.replace(/\\n/g, '\n')
         : '',
-    FIREBASE_COLLECTION: process.env.FIREBASE_COLLECTION
-        ? process.env.FIREBASE_COLLECTION
+    FIREBASE_COLLECTION_NAME: process.env.FIREBASE_COLLECTION_NAME
+        ? process.env.FIREBASE_COLLECTION_NAME
         : '',
     FIREBASE_DOCUMENT_ID: process.env.FIREBASE_DOCUMENT_ID
         ? process.env.FIREBASE_DOCUMENT_ID
