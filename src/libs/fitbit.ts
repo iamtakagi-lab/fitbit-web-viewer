@@ -1,6 +1,6 @@
 import FitbitApiClient from "fitbit-node";
 import Credential from './credential';
-import env from './env';
+import env from '../env';
 
 import { getTimeRange, jsonMemSize } from './utils'
 
