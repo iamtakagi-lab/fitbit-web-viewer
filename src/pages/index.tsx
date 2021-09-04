@@ -1,7 +1,6 @@
 import React, { Props, useEffect, useState } from 'react'
 import useSWR from 'swr';
 import Fitbit from '../components/fitbit';
-import { REFRESH_INTERVAL } from '../constants';
 import { Activity } from '../types';
 import axios from 'axios'
 
