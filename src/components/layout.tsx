@@ -8,5 +8,11 @@ export const Layout: React.FC<{
     <div className="flex-1 mt-5">
       <Component {...pageProps} />
     </div>
+    <div className="mt-5">
+      <a
+        className="text-sm underline text-blue-500"
+        href="https://github.com/iamtakagi/fitbit-insights"
+      />
+    </div>
   </div>
 )
