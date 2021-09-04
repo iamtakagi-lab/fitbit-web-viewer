@@ -23,9 +23,11 @@ export default class Credential {
             this.setLastRefreshedAt(lastRefreshedAt)
         }
 
-        //最後のトークンリフレッシュから1時間以上経過していたら更新する
-        const expiry = Date.now() + TOKEN_EXPIRE_TIME * 1000
-        if(expiry >= Date.now()) {
+        //　最後のトークンリフレッシュから1時間以上経過していたら更新する
+        //　最後の更新日時 + 1時間 = 期限
+        // 今の日時 >= 期限 
+        const expiry = lastRefreshedAt + (TOKEN_EXPIRE_TIME * 1000)
+        if(Date.now() >= expiry) {
             doRefreshToken(useFitbit(), this)
         }
  
