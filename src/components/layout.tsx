@@ -12,7 +12,7 @@ export const Layout: React.FC<{
       <a
         className="text-sm underline text-blue-500"
         href="https://github.com/iamtakagi/fitbit-insights"
-      />
+      >https://github.com/iamtakagi/fitbit-insights</a>
     </div>
   </div>
 )
