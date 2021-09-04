@@ -1,4 +1,4 @@
-import { zonedTimeToUtc } from 'date-fns-tz'
+import { utcToZonedTime } from 'date-fns-tz'
 
 export const jsonMemSize = (json: any) => {
     let totalBytes = 0;
@@ -16,7 +16,7 @@ export const jsonMemSize = (json: any) => {
 }
 
 export const getTimeRange = () => {
-    let currentDate = zonedTimeToUtc(new Date(), "Asia/Tokyo")
+    let currentDate = utcToZonedTime(new Date(), "Asia/Tokyo")
 
     let prevHour: any = Math.max(currentDate.getHours() - 1, 0);
     let curHour: any = currentDate.getHours();
