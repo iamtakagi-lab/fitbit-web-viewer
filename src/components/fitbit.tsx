@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Activity } from '../types'
 
-const Fitbit: React.FC<{activity: Activity}> = ({activity}) => {
+const Fitbit: React.FC<{name: string, activity: Activity}> = ({name, activity}) => {
   return (
    <>
-    <p>takagi - 人体</p>
+    <p>{name} - 人体</p>
     <p>❤ 心拍数: {activity.heartrate}</p>
     <p>🔥 消費済みカロリー: {activity.calories}</p>
     <p>👟 歩いた距離: {activity.miles}</p>

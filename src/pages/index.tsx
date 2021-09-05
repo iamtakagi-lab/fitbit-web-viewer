@@ -3,8 +3,17 @@ import useSWR from 'swr';
 import Fitbit from '../components/fitbit';
 import { Activity } from '../types';
 import axios from 'axios'
+import env from '../env';
 
-const IndexPage: React.FC<{}> = () => {
+export const getStaticProps = () => {
+  return {
+    props: {
+      name: env.NAME
+    }
+  }
+}
+
+const IndexPage: React.FC<{name: string}> = ({name}) => {
   const fetcher = url => axios.get(url).then(res => res.data)
   const { data: activity } = useSWR<Activity>('/api/fitbit', fetcher)
 
@@ -12,7 +21,7 @@ const IndexPage: React.FC<{}> = () => {
 
   return (
     <>
-      <Fitbit activity={activity}/>
+      <Fitbit name={name} activity={activity}/>
     </>
   )
 }

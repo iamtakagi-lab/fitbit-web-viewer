@@ -5,6 +5,9 @@ export default {
     BASE_URL: process.env.BASE_URL
         ? process.env.BASE_URL
         : '',
+    NAME: process.env.NAME
+        ? process.env.NAME
+        : '',
     FITBIT_REDIRECT_URL: process.env.FITBIT_REDIRECT_URL
         ? process.env.FITBIT_REDIRECT_URL
         : '',
