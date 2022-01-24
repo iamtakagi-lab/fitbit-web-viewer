@@ -1,4 +1,4 @@
-# fitbit-insights
+# fitbit-web-viewer
 A minimal web-service to visualize Fitbit
 
 ## Installation
@@ -8,4 +8,4 @@ A minimal web-service to visualize Fitbit
 https://yourhost.vercel.app/api/authorize
 
 ## LICENSE
-iamtakagi/fitbit-insights is provided under the MIT license.
+iamtakagi/fitbit-web-viewer is provided under the MIT license.
