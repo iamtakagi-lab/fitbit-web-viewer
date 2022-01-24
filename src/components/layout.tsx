@@ -8,8 +8,8 @@ export const Layout: React.FC<{
       <Component {...pageProps} />
       <a
         className="text-sm underline text-blue-500 mt-5"
-        href="https://github.com/iamtakagi/fitbit-insights"
-      >https://github.com/iamtakagi/fitbit-insights</a>
+        href="https://github.com/iamtakagi/fitbit-web-viewer"
+      >https://github.com/iamtakagi/fitbit-web-viewer</a>
     </div>
   </div>
 )
